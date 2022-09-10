@@ -41,3 +41,32 @@ const Board = ({
   const handleMenuClose = () => {
     setMoreAnchorEl(null)
   }
+   // handle new task
+   const handleCreateTask = (newTask) => {
+    fetch('/api/tasks/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify({
+        board_id: id,
+        completed: newTask.completed,
+        description: newTask.description,
+        due_date: newTask.due_date,
+        name: newTask.name,
+        priority: newTask.priority,
+        status: newTask.status,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (tasks.length === 0) {
+          setTasks([data])
+        } else {
+          setTasks((prevTasks) => {
+            return [...prevTasks, data]
+          })
+        }
+      })
+  }
