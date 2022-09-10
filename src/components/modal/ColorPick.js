@@ -1,25 +1,26 @@
-import React from 'react'
+import React from "react";
 import {
   FormControl,
   Radio,
   FormLabel,
   RadioGroup,
   FormControlLabel,
-} from '@mui/material'
+} from "@mui/material";
 
 const ColorPicker = ({ color, colors, setColor }) => {
   return (
     <FormControl xs={{ pb: 2 }}>
       <FormLabel>Project Color</FormLabel>
       <RadioGroup
-        className='flex row'
+        className="flex row"
         value={color}
-        onChange={(e) => setColor(e.target.value)}>
+        onChange={(e) => setColor(e.target.value)}
+      >
         {colors.map((color) => (
           <FormControlLabel
             control={<Radio />}
             value={color.mainColor}
-            label=''
+            label=""
             sx={{
               backgroundColor: color.mainColor,
             }}
@@ -27,7 +28,7 @@ const ColorPicker = ({ color, colors, setColor }) => {
         ))}
       </RadioGroup>
     </FormControl>
-     )
-    }
-    
-    export default ColorPicker
+  );
+};
+
+export default ColorPicker;
