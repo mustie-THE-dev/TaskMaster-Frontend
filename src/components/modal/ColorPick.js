@@ -27,3 +27,7 @@ const ColorPicker = ({ color, colors, setColor }) => {
         ))}
       </RadioGroup>
     </FormControl>
+     )
+    }
+    
+    export default ColorPicker
