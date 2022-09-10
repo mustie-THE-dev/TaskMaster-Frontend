@@ -16,3 +16,38 @@ export const FavoritesList = ({ list }) => {
   const handleClick = () => {
     setOpen(!open)
   }
+
+  return (
+    <>
+      <List>
+        <ListItemButton onClick={handleClick}>
+          <ListItemText primary='Favorites' />
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+        <Collapse in={open} timeout='auto' unmountOnExit>
+          {list
+            ? list.map((item) => {
+                return (
+                  <List
+                    component='div'
+                    disablePadding
+                    key={`favorite-${item.id}`}>
+                    <Link className='link' to={`/projects/${item.id}`} exact>
+                      <ListItemButton sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                          <Star />
+                        </ListItemIcon>
+                        <ListItemText primary={item.title} />
+                      </ListItemButton>
+                    </Link>
+                  </List>
+                )
+              })
+            : null}
+        </Collapse>
+      </List>
+    </>
+  )
+}
+
+export default FavoritesList
