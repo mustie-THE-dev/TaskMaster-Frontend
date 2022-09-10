@@ -21,3 +21,16 @@ const ProjectModal = ({
     setTitle(project ? project.title : '')
     setColor(project ? project.color : '')
   }, [project])
+  
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    if (project) {
+      const updatedProject = { ...project, title: title, color: color }
+      handleUpdatingProject(updatedProject)
+    } else {
+      const newProject = { title: title, color: color }
+      postProjects(newProject)
+      setTitle('')
+      setColor('')
+    }
