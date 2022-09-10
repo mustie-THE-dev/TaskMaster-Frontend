@@ -45,4 +45,17 @@ const BoardModal = ({
           gutterBottom>
           Board Details
         </Typography>
-        
+        <form
+          noValidate
+          autoComplete='off'
+          onSubmit={handleSubmit}
+          className='form details-form'>
+          <TitleField title={name} setTitle={setName} labelName='Board Name' />
+          <SaveButton title={board ? 'Save Board' : 'Create Board'} />
+        </form>
+      </div>
+    </Modal>
+  )
+}
+
+export default BoardModal
