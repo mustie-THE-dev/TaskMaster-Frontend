@@ -24,3 +24,25 @@ const BoardModal = ({
       handleCreateBoard(newBoard)
       setName('')
     }
+
+    handleCloseModel()
+  }
+
+  return (
+    <Modal
+      className='modal'
+      open={openModal}
+      onClose={handleCloseModel}
+      aria-labelledby='modal-edit-board'
+      aria-describedby='modal-edit-board-name'>
+      <div
+        className='modal-body edit-modal b-radius'
+        style={{ background: !mode ? '#212121' : '#fff' }}>
+        <Typography
+          id='modal-modal-title'
+          variant='h5'
+          component='h3'
+          gutterBottom>
+          Board Details
+        </Typography>
+        
