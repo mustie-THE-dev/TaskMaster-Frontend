@@ -21,3 +21,5 @@ const CreateBoard = ({ handleOpenModel }) => {
     </Grid>
   )
 }
+
+export default CreateBoard
