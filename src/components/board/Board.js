@@ -138,3 +138,27 @@ const Board = ({
         component={board}
         componentType='Board'
       />
+
+
+<BoardModal
+        board={board}
+        openModal={openBoardModal}
+        handleCloseModel={handleCloseBoardModel}
+        mode={mode}
+        handleUpdateBoard={handleUpdateBoard}
+      />
+
+      <TaskModal
+        openModal={openTaskModal}
+        handleCloseModel={handleCloseTaskModel}
+        mode={mode}
+        task={null}
+        currentBoardId={id}
+        boards={boards}
+        handleCreateTask={handleCreateTask}
+      />
+    </Grid>
+  )
+}
+
+export default Board
