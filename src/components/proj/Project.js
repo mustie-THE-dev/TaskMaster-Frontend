@@ -37,3 +37,15 @@ const Project = ({
       : (completedTasks.length / tasks.length) * 100
 
   const currentColorScheme = ProjectColors(project)
+
+  //menu to see more options
+  const [moreAnchorEl, setMoreAnchorEl] = React.useState(null)
+  const isMenuOpen = Boolean(moreAnchorEl)
+
+  const handleMenuOpen = (event) => {
+    setMoreAnchorEl(event.currentTarget)
+  }
+
+  const handleMenuClose = () => {
+    setMoreAnchorEl(null)
+  }
