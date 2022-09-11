@@ -70,3 +70,8 @@ const Board = ({
         }
       })
   }
+
+  //handle edit board modal
+  const [openBoardModal, setOpenBoardModal] = React.useState(false)
+  const handleOpenBoardModel = () => setOpenBoardModal(true)
+  const handleCloseBoardModel = () => setOpenBoardModal(false)
