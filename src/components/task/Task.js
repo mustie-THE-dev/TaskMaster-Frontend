@@ -100,3 +100,30 @@ const Task = ({
           </Grid>
         </CardContent>
       </Card>
+
+
+      {/* popups */}
+      <DropdownMenu
+        moreAnchorEl={moreAnchorEl}
+        isMenuOpen={isMenuOpen}
+        handleMenuClose={handleMenuClose}
+        handleOpenModel={handleOpenModel}
+        handleDelete={handleDeleteTask}
+        component={task}
+        componentType='Task'
+      />
+
+      <TaskModal
+        openModal={openModal}
+        handleCloseModel={handleCloseModel}
+        mode={mode}
+        task={task}
+        boards={boards}
+        currentBoardId={currentBoardId}
+        updateTask={updateTask}
+      />
+    </Grid>
+  )
+}
+
+export default Task
