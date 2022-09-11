@@ -127,3 +127,14 @@ const Board = ({
         variant='outlined'>
         Add Task
       </Button>
+
+       {/* popups */}
+       <DropdownMenu
+        moreAnchorEl={moreAnchorEl}
+        isMenuOpen={isMenuOpen}
+        handleMenuClose={handleMenuClose}
+        handleOpenModel={handleOpenBoardModel}
+        handleDelete={handleDeleteBoard}
+        component={board}
+        componentType='Board'
+      />
