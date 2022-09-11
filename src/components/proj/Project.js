@@ -27,3 +27,13 @@ const Project = ({
   handleUpdatingProject,
   handleDeleteProject,
 }) => {
+    // handle progress bar
+  const tasks = project.boards.map((board) => board.tasks).flat()
+
+  const completedTasks = tasks.filter((task) => task.completed === true)
+  const progress =
+    completedTasks.length === 0
+      ? 0
+      : (completedTasks.length / tasks.length) * 100
+
+  const currentColorScheme = ProjectColors(project)
