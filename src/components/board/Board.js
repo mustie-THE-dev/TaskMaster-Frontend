@@ -75,3 +75,10 @@ const Board = ({
   const [openBoardModal, setOpenBoardModal] = React.useState(false)
   const handleOpenBoardModel = () => setOpenBoardModal(true)
   const handleCloseBoardModel = () => setOpenBoardModal(false)
+
+
+  //handle create task modal
+  const [openTaskModal, setOpenTaskModal] = React.useState(false)
+  const handleOpenTaskModel = () => setOpenTaskModal(true)
+  const handleCloseTaskModel = () => setOpenTaskModal(false)
+
