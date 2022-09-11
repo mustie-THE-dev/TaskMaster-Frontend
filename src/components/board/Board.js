@@ -82,3 +82,48 @@ const Board = ({
   const handleOpenTaskModel = () => setOpenTaskModal(true)
   const handleCloseTaskModel = () => setOpenTaskModal(false)
 
+
+  return (
+    <Grid
+      item
+      className='board b-radius-sm'
+      flexDirection='column'
+      sx={{
+        backgroundColor: (theme) =>
+          mode ? colors.colorLight : theme.palette.grey[800],
+      }}>
+      <Grid container alignContent='center' justifyContent='space-between'>
+        <Typography variant='h6' component='h3' gutterBottom>
+          {name}
+        </Typography>
+        <Box className='flex'>
+          <Tooltip title='Board Options'>
+            <IconButton
+              aria-label='show options'
+              aria-controls='board-options'
+              aria-haspopup='true'
+              onClick={handleMenuOpen}>
+              <MoreHorizIcon />
+            </IconButton>
+          </Tooltip>
+        </Box>
+      </Grid>
+
+      <Tasks
+        tasks={tasks}
+        currentBoardId={id}
+        mode={mode}
+        setTasks={setTasks}
+        boards={boards}
+        fetchProject={fetchProject}
+      />
+
+      {/* add task button */}
+      <Button
+        className='btn-add'
+        color='inherit'
+        onClick={handleOpenTaskModel}
+        startIcon={<AddIcon />}
+        variant='outlined'>
+        Add Task
+      </Button>
