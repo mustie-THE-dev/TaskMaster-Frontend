@@ -1,6 +1,6 @@
 
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import DeleteReview from './DeleteReview';
 
@@ -8,20 +8,6 @@ function ReviewFeed( {reviews} ) {
 
     const navigate = useNavigate()
     const { id } = useParams()
-
-    // const [reviews, setReviews] = useState([])
-
-
-
-    // const getProfile = async () => {
-    //     const response = await fetch(`http://localhost:9292/pokemon/${id}/reviews`);
-    //     const data = await response.json();
-    //     setReviews(data.reviews);
-    //   };
-
-    // useEffect(() => {
-    //     getProfile();
-    // }, []);
 
     
     console.log(reviews)
@@ -50,7 +36,7 @@ function ReviewFeed( {reviews} ) {
                 <h3>Anonnymous:</h3>
                 <p className='div-feed'>{review.text}</p>
                 <p><strong>Rating: </strong>{review.rating}</p>
-                <DeleteReview reviews_id={review.id}/>
+                <DeleteReview onClick={handleDelete} reviews_id={review.id}/>
             </li>)}
         </ol>
     </div>

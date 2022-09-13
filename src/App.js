@@ -1,6 +1,6 @@
 
 
-import { useEffect, useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import MainFeed from './components/MainFeed';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';

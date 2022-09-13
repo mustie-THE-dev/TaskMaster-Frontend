@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import ReviewFeed from './ReviewFeed';
 import NewReview from './NewReview';
 
@@ -14,7 +14,8 @@ function Pokemon() {
     useEffect(() => {
         fetch(`http://localhost:9292/pokemon/${id}`)
             .then((r) => r.json())
-            .then(setPokemon);
+            .then((data) => setPokemon(data))
+           // .then(setPokemon);
     }, []);
 
     const [reviews, setReviews] = useState([])
