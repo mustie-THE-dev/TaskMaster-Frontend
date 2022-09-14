@@ -7,7 +7,7 @@ function Navbar() {
         <nav>
             <div className='div-header'>
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                    <h2>PokeViewer</h2>
+                    <h2>Taskmaster Pokemon</h2>
                 </div>
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                     <Link to="/pokemon" className='btn'>
